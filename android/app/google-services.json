@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "303000054358",
+    "project_id": "mizam-app",
+    "storage_bucket": "mizam-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303000054358:android:027c8a69a054b9d51929f7",
+        "android_client_info": {
+          "package_name": "com.example.mizam_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "303000054358-9v7vk10gnqba0v2t8gdq7s7gl7sropqj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGCT5AT7uACTjOcRvmAM3kU-l2emrWdq8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "303000054358-9v7vk10gnqba0v2t8gdq7s7gl7sropqj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "303000054358-i8qm9a95g725d9ijjv93fds0bhaumrhu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mizamApp.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
