@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:mizam_app/common/widgets/main_button.dart';
 import 'package:mizam_app/features/authorization/presentation/bloc/autharization_bloc.dart';
-import 'package:mizam_app/features/authorization/presentation/widgets/background.dart';
+import 'package:mizam_app/common/widgets/background.dart';
 import 'package:mizam_app/features/authorization/presentation/widgets/dont_have_an_account.dart';
 import 'package:mizam_app/features/authorization/presentation/widgets/email_field.dart';
 import 'package:mizam_app/features/authorization/presentation/widgets/forgot_password.dart';
@@ -41,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
         resizeToAvoidBottomInset: false,
         body: Stack(
           children: [
-            const Background(),
+            Background(height: deviceHeight),
             SafeArea(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -63,25 +62,9 @@ class _LoginPageState extends State<LoginPage> {
                     const ForgotPassword(),
                     const SizedBox(height: 40),
                     MainButton(
-                      widget:
-                          BlocBuilder<AutharizationBloc, AutharizationState>(
-                        builder: (context, state) {
-                          if (state is UserEntering) {
-                            return const SizedBox(
-                              height: 35,
-                              width: 35,
-                              child: CircularProgressIndicator(
-                                color: Colors.white,
-                                strokeWidth: 3,
-                              ),
-                            );
-                          } else {
-                            return Text(
-                              translation(context).login,
-                              style: Theme.of(context).textTheme.displayMedium,
-                            );
-                          }
-                        },
+                      widget: Text(
+                        translation(context).login,
+                        style: Theme.of(context).textTheme.displayMedium,
                       ),
                       onPressed: () {
                         bloc.add(
@@ -110,7 +93,19 @@ class _LoginPageState extends State<LoginPage> {
       listener: (context, state) {
         if (state is UserOnline) {
           Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
+        } else if (state is UserEntering) {
+          showDialog(
+            context: context,
+            builder: (context) {
+              return const Center(
+                child: CircularProgressIndicator(
+                  color: Colors.white,
+                ),
+              );
+            },
+          );
         } else if (state is ConnectionError) {
+          Navigator.pop(context);
           showCustomBottomSheet(
             context,
             translation(context).connection_error,
@@ -119,6 +114,7 @@ class _LoginPageState extends State<LoginPage> {
             translation(context).done,
           );
         } else if (state is NoUserError) {
+          Navigator.pop(context);
           showCustomBottomSheet(
             context,
             translation(context).no_user,
@@ -127,6 +123,7 @@ class _LoginPageState extends State<LoginPage> {
             translation(context).done,
           );
         } else if (state is PasswordError) {
+          Navigator.pop(context);
           showCustomBottomSheet(
             context,
             translation(context).password_error,
@@ -135,6 +132,7 @@ class _LoginPageState extends State<LoginPage> {
             translation(context).done,
           );
         } else if (state is OtherError) {
+          Navigator.pop(context);
           showCustomBottomSheet(
             context,
             translation(context).error,

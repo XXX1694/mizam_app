@@ -18,5 +18,15 @@ class LogOut extends AutharizationEvent {}
 class Register extends AutharizationEvent {
   final String emailAddress;
   final String password;
-  const Register({required this.emailAddress, required this.password});
+  final String fullName;
+  const Register({
+    required this.emailAddress,
+    required this.password,
+    required this.fullName,
+  });
+}
+
+class ResetPassword extends AutharizationEvent {
+  final String email;
+  const ResetPassword(this.email);
 }

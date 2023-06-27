@@ -46,5 +46,72 @@ class AutharizationBloc extends Bloc<AutharizationEvent, AutharizationState> {
         }
       },
     );
+
+    on<Register>(
+      (event, emit) async {
+        emit(UserCreating());
+        if (kDebugMode) {
+          print('User Creating');
+        }
+        final isConnected = await networkInfo.isConnected();
+        if (!isConnected) {
+          emit(ConnectionError());
+          if (kDebugMode) {
+            print('No connection');
+          }
+        } else {
+          final String res = await repo.createUserByEmailAndPassword(
+              event.emailAddress, event.password, event.fullName);
+          if (res == 'success') {
+            emit(UserOnline());
+            if (kDebugMode) {
+              print('user_online, user_created');
+            }
+          } else if (res == 'The password provided is too weak.') {
+            emit(PasswordWeak(message: res));
+          } else if (res == 'The account already exists for that email.') {
+            emit(UserExist(message: res));
+          } else {
+            emit(OtherError());
+          }
+        }
+      },
+    );
+
+    on<LogOut>(
+      (event, emit) async {
+        emit(UserExiting());
+        final isConnected = await networkInfo.isConnected();
+        if (!isConnected) {
+          emit(ConnectionError());
+          if (kDebugMode) {
+            print('No connection');
+          }
+        } else {
+          await repo.userSingOut();
+          emit(UserOffline());
+        }
+      },
+    );
+
+    on<ResetPassword>(
+      (event, emit) async {
+        emit(ResetSending());
+        final isConnected = await networkInfo.isConnected();
+        if (!isConnected) {
+          emit(ConnectionError());
+          if (kDebugMode) {
+            print('No connection');
+          }
+        } else {
+          final res = await repo.resetPassword(event.email);
+          if (res) {
+            emit(ResetSend());
+          } else {
+            emit(ResetSendError());
+          }
+        }
+      },
+    );
   }
 }

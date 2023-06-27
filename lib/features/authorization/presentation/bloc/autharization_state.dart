@@ -13,6 +13,8 @@ class UserOnline extends AutharizationState {}
 
 class UserEntering extends AutharizationState {}
 
+class UserCreating extends AutharizationState {}
+
 class UserOffline extends AutharizationState {}
 
 class UserExiting extends AutharizationState {}
@@ -32,6 +34,22 @@ class PasswordError extends AutharizationState {
   const PasswordError({required this.message});
 }
 
+class PasswordWeak extends AutharizationState {
+  final String message;
+  const PasswordWeak({required this.message});
+}
+
+class UserExist extends AutharizationState {
+  final String message;
+  const UserExist({required this.message});
+}
+
 class OtherError extends AutharizationState {}
 
 class ConnectionError extends AutharizationState {}
+
+class ResetSending extends AutharizationState {}
+
+class ResetSend extends AutharizationState {}
+
+class ResetSendError extends AutharizationState {}

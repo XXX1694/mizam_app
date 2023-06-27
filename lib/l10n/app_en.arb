@@ -34,6 +34,44 @@
     "no_user": "No user",
     "password_error": "Password error",
     "error": "Error",
-    "smth": "Something went wrong"
+    "smth": "Something went wrong",
+    "weak_password": "Weak password",
+    "user_exist": "User already exist",
+    "email_send": "Email send",
+    "reset_text": "Password reset link send to your email",
+
+    "home": "Home",
+    "catalog": "Catalog",
+    "featured": "Featured",
+    "cart": "Cart",
+    "profile": "Profile",
+
+    "location": "Location,",
+    "current_location": " current location",
+
+    "electronics": "Electronics",
+    "accessories": "Accessories",
+    "beauty": "Beauty",
+    "for_home": "For home",
+    "children": "Children's clothes goods",
+    "clothes": "Clothes",
+    "footwear": "Footwear",
+    "other": "Other",
+
+    "watched_recently": "Watched recently",
+    "in_trend": "In trend",
+
+    "search": "Search",
+
+    "edit_profile": "Edit profile",
+    "change_password": "Change password",
+    "my_orders": "My Orders",
+    "my_address": "My address",
+    "exit": "Exit",
+
+    "log_in_now": "Log in now",
+    "no_auth_text": "You are not logged in to your account"
+
+
 
 }

@@ -4,7 +4,7 @@ import 'package:mizam_app/features/authorization/presentation/widgets/otp_second
 
 import '../../../../common/widgets/main_button.dart';
 import '../../../../utils/translate.dart';
-import '../widgets/background.dart';
+import '../../../../common/widgets/background.dart';
 import '../widgets/top_side.dart';
 
 class OTPVerificationPage extends StatefulWidget {
@@ -31,7 +31,7 @@ class _OTPVerificationPageState extends State<OTPVerificationPage> {
       resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
-          const Background(),
+          Background(height: deviceHeight),
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),

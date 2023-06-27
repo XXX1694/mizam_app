@@ -17,7 +17,10 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -25,7 +28,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -43,40 +49,22 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAp2IvzKTtvcZ3TJJO8llMs-7HhZGfQVJ0',
-    appId: '1:303000054358:web:66078f4bb453728b1929f7',
-    messagingSenderId: '303000054358',
-    projectId: 'mizam-app',
-    authDomain: 'mizam-app.firebaseapp.com',
-    storageBucket: 'mizam-app.appspot.com',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCGCT5AT7uACTjOcRvmAM3kU-l2emrWdq8',
-    appId: '1:303000054358:android:027c8a69a054b9d51929f7',
-    messagingSenderId: '303000054358',
-    projectId: 'mizam-app',
-    storageBucket: 'mizam-app.appspot.com',
+    apiKey: 'AIzaSyBo73JG7xu3bDk06syU_f0XaMZPYe-fYs0',
+    appId: '1:605113925498:android:6b439868270772481b20c3',
+    messagingSenderId: '605113925498',
+    projectId: 'mizamapp',
+    storageBucket: 'mizamapp.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDfEIKIPUYe7Kdz2gNBBPXmNXshlOlSSWQ',
-    appId: '1:303000054358:ios:ae6db0dfe2cd07291929f7',
-    messagingSenderId: '303000054358',
-    projectId: 'mizam-app',
-    storageBucket: 'mizam-app.appspot.com',
-    iosClientId: '303000054358-jucgi41s4kttbskikr26cl48tkjdjj0o.apps.googleusercontent.com',
+    apiKey: 'AIzaSyC7_QXGG9kkRJNg62Cv-0iIutdSnN8Nw_E',
+    appId: '1:605113925498:ios:f6811c8bcf61777a1b20c3',
+    messagingSenderId: '605113925498',
+    projectId: 'mizamapp',
+    storageBucket: 'mizamapp.appspot.com',
+    androidClientId: '605113925498-d7749uvl1qqv0c5r5p7eu32kasf4qfnk.apps.googleusercontent.com',
+    iosClientId: '605113925498-1vegcliu5hk6jdttt4litt3789e5ljof.apps.googleusercontent.com',
     iosBundleId: 'com.example.mizamApp',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDfEIKIPUYe7Kdz2gNBBPXmNXshlOlSSWQ',
-    appId: '1:303000054358:ios:68891defa71615bf1929f7',
-    messagingSenderId: '303000054358',
-    projectId: 'mizam-app',
-    storageBucket: 'mizam-app.appspot.com',
-    iosClientId: '303000054358-i8qm9a95g725d9ijjv93fds0bhaumrhu.apps.googleusercontent.com',
-    iosBundleId: 'com.example.mizamApp.RunnerTests',
   );
 }
