@@ -1,3 +1,95 @@
 {
-    "language": "Қазақ"
+    "language": " Тіл",
+    "language_en": "English",
+    "language_ru": "Русский",
+    "language_kz": "Қазақша",
+
+    "sign_in_main_text": "Sing in to your Account",
+    "sign_in_second_text": "Sign in to your Account",
+    "email": "Email",
+    "password": "Password",
+    "forgot_password": "Forgot password?",
+    "login": "Login",
+    "or_login_with": "Or login with",
+    "dont_have_an_account": "Don’t have an account?",
+
+    "register": "Register",
+    "create_acc": "Create your account",
+    "full_name": "Full name",
+    "i_have_account": "I have an account?",
+    "log_in": "Log in",
+
+    "forgot": "Forgot password",
+    "forgot_second": "Enter your email account to reset password",
+    "continuee": "Continue",
+
+    "otp": "OTP verification",
+    "enter_phone": "Please enter your phone number",
+    "phone_number": "Phone numebr",
+    "send_code": "Send code",
+
+    "confirm": "Confirm",
+    "resend_code": "resend code",
+
+    "connection_error": "Connection error",
+    "connection_second": "Please check connection to the Network and try again",
+    "done": "Done",
+    "no_user": "No user",
+    "password_error": "Password error",
+    "error": "Error",
+    "smth": "Something went wrong",
+    "weak_password": "Weak password",
+    "user_exist": "User already exist",
+    "email_send": "Email send",
+    "reset_text": "Password reset link send to your email",
+
+    "home": "Басты",
+    "catalog": "Каталог",
+    "featured": "Сүйікті",
+    "cart": "Корап",
+    "profile": "Профиль",
+
+    "location": "Location,",
+    "current_location": " current location",
+
+    "electronics": "Electronics",
+    "accessories": "Accessories",
+    "beauty": "Beauty",
+    "for_home": "For home",
+    "children": "Children's clothes goods",
+    "clothes": "Clothes",
+    "footwear": "Footwear",
+    "other": "Other",
+
+    "watched_recently": "Watched recently",
+    "in_trend": "In trend",
+
+    "search": "Search",
+
+    "edit_profile": "Edit profile",
+    "change_password": "Change password",
+    "my_orders": "My Orders",
+    "my_address": "My address",
+    "exit": "Exit",
+
+    "log_in_now": "Log in now",
+    "no_auth_text": "You are not logged in to your account",
+
+    "settings": "Settings",
+    "theme": "Theme",
+    "languagee": "Language",
+    "faq": "FAQ",
+
+    "change_password": "Change password",
+    "old_password": "Old password",
+    "new_password": "New password",
+    "repeat_password": "Repeat password",
+    "change": "Change",
+
+    "password_changed": "Password changed",
+    "password_changed_successfully": "Password changed successfully",
+
+    "save": "Save"
+
+
 }

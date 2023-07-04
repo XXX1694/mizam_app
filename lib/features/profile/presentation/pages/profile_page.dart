@@ -42,9 +42,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     child: CircularProgressIndicator(color: mainColor),
                   );
                 } else if (state is ProfileGetError) {
-                  return const Center(
-                    child: Text('Profile data get error'),
-                  );
+                  return const NotLogIn();
                 } else if (state is ProfileDataGot) {
                   return Column(
                     children: [
@@ -66,7 +64,9 @@ class _ProfilePageState extends State<ProfilePage> {
                               'assets/icons/settings.svg',
                               height: 24,
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/settings');
+                            },
                           ),
                         ],
                       ),
@@ -78,16 +78,18 @@ class _ProfilePageState extends State<ProfilePage> {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 20.0),
                                 child: ProfileTop(
-                                    full_name: state.model.full_name)),
+                                    full_name: state.model.full_name ?? '')),
                             const SizedBox(height: 32),
-                            const ProfileList(),
+                            ProfileList(
+                              user_data: state.model,
+                            ),
                           ],
                         ),
                       ),
                     ],
                   );
                 } else {
-                  return const Column();
+                  return const NotLogIn();
                 }
               },
             ),
@@ -98,14 +100,6 @@ class _ProfilePageState extends State<ProfilePage> {
                   translation(context).connection_error,
                   translation(context).connection_second,
                   'assets/icons/connection_error.svg',
-                  translation(context).done,
-                );
-              } else if (state is ProfileGetError) {
-                showCustomBottomSheet(
-                  context,
-                  translation(context).error,
-                  translation(context).smth,
-                  'assets/icons/question.svg',
                   translation(context).done,
                 );
               }

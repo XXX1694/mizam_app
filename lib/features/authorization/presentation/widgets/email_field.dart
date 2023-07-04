@@ -14,7 +14,7 @@ class EmailField extends StatelessWidget {
       height: 54,
       width: double.infinity,
       child: TextFormField(
-        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+        style: Theme.of(context).textTheme.labelLarge?.copyWith(
               color: Colors.black.withOpacity(0.7),
             ),
         decoration: InputDecoration(

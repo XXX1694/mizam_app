@@ -19,4 +19,19 @@ class ProfileRepository {
     );
     return myUser;
   }
+
+  Future<int> getUserStream() async {
+    final currentUser = FirebaseAuth.instance.currentUser!;
+    await _db.collection("users").get().then(
+      (querySnapshot) {
+        for (var docSnapshot in querySnapshot.docs) {
+          Map<String, dynamic> user = docSnapshot.data();
+          if (user['uid'] == currentUser.uid) {
+            return user['stream'];
+          }
+        }
+      },
+    );
+    return 1;
+  }
 }

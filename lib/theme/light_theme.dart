@@ -44,7 +44,7 @@ ThemeData lightTheme = ThemeData(
       fontSize: 16,
       letterSpacing: 0,
       fontWeight: FontWeight.w600,
-    ), //  ,
+    ),
     displayMedium: const TextStyle(
       color: Colors.white,
       fontFamily: 'Gilroy',

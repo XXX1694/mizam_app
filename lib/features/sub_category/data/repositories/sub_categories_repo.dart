@@ -22,7 +22,6 @@ class SubCategoryRepository {
         }
       }
     }
-
     return subCategoriesList;
   }
 }

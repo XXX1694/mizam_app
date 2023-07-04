@@ -15,7 +15,7 @@ class SubCategoryGetting extends SubCategoryState {}
 
 class SubCategoryGot extends SubCategoryState {
   // ignore: non_constant_identifier_names
-  final List<SubCategory> sub_category_list;
+  final List<SubCategory>? sub_category_list;
   const SubCategoryGot(this.sub_category_list);
 }
 

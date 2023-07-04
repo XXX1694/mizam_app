@@ -18,7 +18,13 @@ class AuthRepo {
       );
       final user = credential.user;
       await user?.sendEmailVerification();
-      final userModel = UserModel(fullName, emailAddress, password, '');
+      final userModel = UserModel(
+        fullName,
+        emailAddress,
+        password,
+        '',
+        [],
+      );
       userToFirestore(userModel, credential);
       return 'success';
     } on FirebaseAuthException catch (e) {

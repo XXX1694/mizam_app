@@ -9,7 +9,6 @@ import 'package:mizam_app/features/authorization/presentation/widgets/password_f
 import 'package:mizam_app/features/authorization/presentation/widgets/top_side.dart';
 import 'package:mizam_app/utils/translate.dart';
 
-import '../../../../common/colors/main_colors.dart';
 import '../../../../utils/bottom_sheet.dart';
 import '../../../../common/widgets/background.dart';
 
@@ -25,6 +24,7 @@ class _RegistraionPageState extends State<RegistraionPage> {
   late TextEditingController emailController;
   late TextEditingController passwordController;
   late AutharizationBloc bloc;
+
   @override
   void initState() {
     bloc = BlocProvider.of<AutharizationBloc>(context);

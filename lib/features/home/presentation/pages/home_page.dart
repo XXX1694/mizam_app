@@ -9,7 +9,7 @@ import 'package:mizam_app/features/home/presentation/widgets/in_trend.dart';
 import 'package:mizam_app/features/home/presentation/widgets/mini_catalog.dart';
 import 'package:mizam_app/features/home/presentation/widgets/watched_recently.dart';
 
-import '../widgets/change_language.dart';
+import '../widgets/notification.dart';
 import '../widgets/change_location.dart';
 
 class HomePage extends StatefulWidget {
@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             ChangeLocation(),
-                            ChangeLanguage(),
+                            NotificationButton(),
                           ],
                         ),
                       ),

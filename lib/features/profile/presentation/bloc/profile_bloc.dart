@@ -16,22 +16,24 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     required this.repo,
     required ProfileState profileState,
   }) : super(ProfileInitial()) {
-    on<GetUserData>((event, emit) async {
-      emit(ProfileDataGetting());
-      final isConnected = await networkInfo.isConnected();
-      if (!isConnected) {
-        emit(ConnectionError());
-        if (kDebugMode) {
-          print('No connection');
-        }
-      } else {
-        UserModel? model = await repo.getProfileData();
-        if (model != null) {
-          emit(ProfileDataGot(model));
+    on<GetUserData>(
+      (event, emit) async {
+        emit(ProfileDataGetting());
+        final isConnected = await networkInfo.isConnected();
+        if (!isConnected) {
+          emit(ConnectionError());
+          if (kDebugMode) {
+            print('No connection');
+          }
         } else {
-          emit(ProfileGetError());
+          UserModel? model = await repo.getProfileData();
+          if (model != null) {
+            emit(ProfileDataGot(model));
+          } else {
+            emit(ProfileGetError());
+          }
         }
-      }
-    });
+      },
+    );
   }
 }

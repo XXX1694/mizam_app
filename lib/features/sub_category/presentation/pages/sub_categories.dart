@@ -9,6 +9,7 @@ import 'package:mizam_app/features/sub_category/presentation/bloc/sub_category_b
 import '../../../../common/colors/main_colors.dart';
 import '../../../../utils/bottom_sheet.dart';
 import '../../../../utils/translate.dart';
+import '../../../sub_sub_category/presentation/pages/sub_sub_categories.dart';
 
 class SubCategoriesPage extends StatefulWidget {
   const SubCategoriesPage({
@@ -56,7 +57,7 @@ class _SubCategoriesPageState extends State<SubCategoriesPage> {
                     const SizedBox(height: 10),
                     Expanded(
                       child: ListView.builder(
-                        itemCount: state.sub_category_list.length,
+                        itemCount: state.sub_category_list?.length,
                         itemBuilder: (context, index) => Column(
                           children: [
                             Padding(
@@ -64,12 +65,34 @@ class _SubCategoriesPageState extends State<SubCategoriesPage> {
                                   const EdgeInsets.fromLTRB(20, 16, 20, 16),
                               child: CupertinoButton(
                                 padding: const EdgeInsets.all(0),
-                                onPressed: () {},
+                                onPressed: () {
+                                  if (state
+                                          .sub_category_list![index].products ==
+                                      null) {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            SubSubCategoriesPage(
+                                          category_name: state
+                                                  .sub_category_list![index]
+                                                  .name ??
+                                              '',
+                                          sub_category_list: state
+                                                  .sub_category_list![index]
+                                                  .subsub ??
+                                              [],
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                },
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Text(
-                                      state.sub_category_list[index].name ?? '',
+                                      state.sub_category_list?[index].name ??
+                                          '',
                                       style: const TextStyle(
                                         color: Colors.black,
                                         fontFamily: 'Gilroy',

@@ -1,5 +1,8 @@
 {
-    "language": "English",
+    "language": "Language",
+    "language_en": "English",
+    "language_ru": "Русский",
+    "language_kz": "Қазақша",
 
     "sign_in_main_text": "Sing in to your Account",
     "sign_in_second_text": "Sign in to your Account",
@@ -70,8 +73,31 @@
     "exit": "Exit",
 
     "log_in_now": "Log in now",
-    "no_auth_text": "You are not logged in to your account"
+    "no_auth_text": "You are not logged in to your account",
 
+    "settings": "Settings",
+    "theme": "Theme",
+    "languagee": "Language",
+    "faq": "FAQ",
 
+    "change_password": "Change password",
+    "old_password": "Old password",
+    "new_password": "New password",
+    "repeat_password": "Repeat password",
+    "change": "Change",
+
+    "password_changed": "Password changed",
+    "password_changed_successfully": "Password changed successfully",
+
+    "save": "Save",
+
+    "add_address": "Add address",
+    "add_address_new": "Add new address",
+    "my_address": "My Address",
+    "edit": "Edit",
+    "select_address": "Street name and number",
+    "location1": "Location",
+
+    "notification": "Notification"
 
 }
